@@ -25,6 +25,10 @@ export const Image = styled.img`
   border-radius: 6px;
 `;
 
+export const Horizontal = styled.div`
+  display: flex;
+`;
+
 export const HorizontalScroller = styled.div`
   display: flex;
   width: 100%;
@@ -38,5 +42,30 @@ export const HorizontalScroller = styled.div`
 `;
 
 export const PageWrapper = styled.div`
-  padding: 20px;
+  padding: 40px 20px 108px 20px;
+`;
+
+export const LighterDetail = styled(Detail)`
+  color: #808080;
+`;
+
+export const Divider = styled.div`
+  height: 1px;
+  background-color: #e4e4e4;
+  margin-top: 20px;
+`;
+
+export const CircleImage = styled.img`
+  border-radius: 100%;
+`;
+
+export const Chip = styled.div`
+  padding: 6px 12px;
+  background-color: #ececec;
+  font-size: 15px;
+  display: inline-block;
+  border-radius: 15px;
+  & + & {
+    margin-left: 5px;
+  }
 `;

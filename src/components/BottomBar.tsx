@@ -3,11 +3,20 @@ import styled from "@emotion/styled";
 import React from "react";
 import {
   Ereader as BookIcon,
-  Search as Discover,
+  Search as _Search,
   Boy as Me,
 } from "css.gg/icons/all";
 import { Link, withRouter } from "react-router-dom";
 import { ACTIVE_BACKGROUND, ACTIVE_RED } from "../constants";
+
+const Search: React.FC = (props) => (
+  <_Search
+    {...props}
+    css={css`
+      margin-top: 0px !important;
+    `}
+  />
+);
 
 const PAGES = [
   {
@@ -16,13 +25,7 @@ const PAGES = [
     route: "/",
   },
   {
-    icon: () => (
-      <Discover
-        css={css`
-          margin-top: 0px !important;
-        `}
-      />
-    ),
+    icon: Search,
     name: "탐색",
     route: "/discover",
   },
@@ -33,11 +36,29 @@ const PAGES = [
   },
 ];
 
-const NavBar = withRouter(({ history }) => {
+const Searchbar = () => {
+  return (
+    <SearchbarWrapper>
+      <SearchInput placeholder="작품 · 작가를 검색해보세요" />
+      <div
+        css={css`
+          --ggs: 0.8;
+          padding: 12px 20px 0px 0px;
+          color: #959595;
+        `}
+      >
+        <Search />
+      </div>
+    </SearchbarWrapper>
+  );
+};
+
+const BottomBar = withRouter(({ history }) => {
   console.log(history.location.pathname);
   return (
     <Wrapper>
-      <Layout>
+      {history.location.pathname.includes("/discover") && <Searchbar />}
+      <NavWrapper>
         {PAGES.map((page) => (
           <div>
             <Link
@@ -57,27 +78,30 @@ const NavBar = withRouter(({ history }) => {
             </Link>
           </div>
         ))}
-      </Layout>
+      </NavWrapper>
     </Wrapper>
   );
 });
 
 const Wrapper = styled.div`
-  padding: 20px 40px;
+  /* padding: 20px 0px; */
   box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.07);
   position: fixed;
   bottom: 0px;
+  left: 0px;
   width: 100%;
   box-sizing: border-box;
+  background-color: white;
 `;
 
-const Layout = styled.div`
+const NavWrapper = styled.div`
   max-width: 334px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
   margin: 0px auto;
+  display: flex;
+  padding: 20px 40px;
+  justify-content: space-between;
   align-items: center;
+  box-sizing: content-box;
 `;
 
 const Button = styled.div<{ active: boolean }>`
@@ -109,4 +133,18 @@ const Name = styled.div`
   transition: 1s;
 `;
 
-export default <NavBar />;
+const SearchbarWrapper = styled.div`
+  border-bottom: 1px solid #e4e4e4;
+  display: flex;
+  /* padding-right: 15px; */
+`;
+
+const SearchInput = styled.input`
+  padding: 15px 20px;
+  outline: none;
+  border: none;
+  flex: 1;
+  box-sizing: border-box;
+`;
+
+export default <BottomBar />;

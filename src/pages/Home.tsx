@@ -8,7 +8,7 @@ import {
   HorizontalScroller,
   PageWrapper,
 } from "../components/Atomics";
-import NavBar from "../components/NavBar";
+import BottomBar from "../components/BottomBar";
 
 interface ISeriesCardProps {
   title: string;
@@ -60,41 +60,43 @@ const WritingCard: React.FC<IWritingCard> = ({ title, imageUri }) => {
 
 const Home = () => {
   return (
-    <PageWrapper>
-      <GroupTitle>읽고있는 작품</GroupTitle>
-      <HorizontalScroller>
-        <SeriesCard
-          title="0% 의 가능성"
-          imageUri="https://rycont.imfast.io/Share/%EC%A7%80%EC%88%98/1588748506721.jpg"
-          authorName="COCO N"
-        />
-        <SeriesCard
-          title="1% 의 가능성"
-          imageUri="https://rycont.imfast.io/Share/%EC%A7%80%EC%88%98/1588748517398.jpg"
-          authorName="COCO N"
-        />
-        <SeriesCard
-          title="100% 의 가능성"
-          imageUri="https://rycont.imfast.io/Share/%EC%A7%80%EC%88%98/1588748506369.jpg"
-          authorName="COCO N"
-        />
-      </HorizontalScroller>
-      <GroupTitle>0%의 가능성</GroupTitle>
-      <HorizontalScroller>
-        <WritingCard
-          imageUri="https://rycont.imfast.io/Share/%EC%A7%80%EC%88%98/1588748516202-2.jpg"
-          title="1부 : 포션제조"
-        />
-      </HorizontalScroller>
-      <GroupTitle>나의 방에는 작은 기린이 산다</GroupTitle>
-      <HorizontalScroller>
-        <WritingCard
-          imageUri="https://rycont.imfast.io/Share/%EC%A7%80%EC%88%98/1588748517398.jpg"
-          title="127화 : 동물원에 가다"
-        />
-      </HorizontalScroller>
-      {NavBar}
-    </PageWrapper>
+    <>
+      <PageWrapper>
+        <GroupTitle>읽고있는 작품</GroupTitle>
+        <HorizontalScroller>
+          <SeriesCard
+            title="0% 의 가능성"
+            imageUri="https://rycont.imfast.io/Share/%EC%A7%80%EC%88%98/1588748506721.jpg"
+            authorName="COCO N"
+          />
+          <SeriesCard
+            title="1% 의 가능성"
+            imageUri="https://rycont.imfast.io/Share/%EC%A7%80%EC%88%98/1588748517398.jpg"
+            authorName="COCO N"
+          />
+          <SeriesCard
+            title="100% 의 가능성"
+            imageUri="https://rycont.imfast.io/Share/%EC%A7%80%EC%88%98/1588748506369.jpg"
+            authorName="COCO N"
+          />
+        </HorizontalScroller>
+        <GroupTitle>0%의 가능성</GroupTitle>
+        <HorizontalScroller>
+          <WritingCard
+            imageUri="https://rycont.imfast.io/Share/%EC%A7%80%EC%88%98/1588748516202-2.jpg"
+            title="1부 : 포션제조"
+          />
+        </HorizontalScroller>
+        <GroupTitle>나의 방에는 작은 기린이 산다</GroupTitle>
+        <HorizontalScroller>
+          <WritingCard
+            imageUri="https://rycont.imfast.io/Share/%EC%A7%80%EC%88%98/1588748517398.jpg"
+            title="127화 : 동물원에 가다"
+          />
+        </HorizontalScroller>
+      </PageWrapper>
+      {BottomBar}
+    </>
   );
 };
 
