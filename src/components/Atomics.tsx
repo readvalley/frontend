@@ -58,6 +58,7 @@ export const Divider = styled.div`
 
 export const CircleImage = styled.img`
   border-radius: 100%;
+  object-fit: cover;
 `;
 
 export const Chip = styled.div`
@@ -83,4 +84,16 @@ export const SubgroupTitle = styled.h2`
 
 export const IconButtonCss = css`
   color: #bc8888;
+`;
+
+export const Center = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+export const Input = styled.input`
+  outline: none;
+  border: 1px solid #e4e4e4;
+  padding: 10px 15px;
+  box-sizing: border-box;
 `;

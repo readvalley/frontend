@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import { GroupTitle, Horizontal, PageWrapper } from "../../components/Atomics";
 import BottomBar from "../../components/BottomBar";
+import Info from "./Info";
 import Library from "./Library";
 import Wallet from "./Wallet";
 
@@ -67,6 +68,7 @@ const Me: React.FC<RouteComponentProps> = ({ history, match }) => {
         <Switch>
           <Route path={`${match.path}/library`} component={Library} />
           <Route path={`${match.path}/wallet`} component={Wallet} />
+          <Route path={`${match.path}/info`} component={Info} />
           <Redirect path="*" to="/me/library" />
         </Switch>
       </PageWrapper>

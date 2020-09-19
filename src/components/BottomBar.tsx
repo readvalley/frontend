@@ -112,7 +112,7 @@ const Button = styled.div<{ active: boolean }>`
   ${({ active }) =>
     active &&
     css`
-      background-color: ${ACTIVE_BACKGROUND};
+      background-color: #ffcccc;
       padding: 15px 20px;
       border-radius: 48px;
       box-shadow: 0px 3px 30px #ffcfcf;
