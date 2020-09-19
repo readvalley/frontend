@@ -102,6 +102,7 @@ export const Input = styled.input`
   border: 1px solid #e4e4e4;
   padding: 10px 15px;
   box-sizing: border-box;
+  border-radius: 6px;
 `;
 
 export const SmallBold = styled.p`

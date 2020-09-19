@@ -72,7 +72,7 @@ const Library = () => {
       _id: "3843",
     },
   ];
-  const FOLLOWING_CREATOR: IDisplayCreator[] = [
+  const FOLLOWING_CREATOR: Partial<IDisplayCreator>[] = [
     {
       image: "https://pbs.twimg.com/media/EiQSUj8UwAIPlrs?format=jpg",
       name: "산악회장",

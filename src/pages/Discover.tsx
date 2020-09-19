@@ -76,7 +76,7 @@ const Discover = () => {
     },
   ];
 
-  const WEEKLY_CREATOR: IDisplayCreator[] = [
+  const WEEKLY_CREATOR: Partial<IDisplayCreator>[] = [
     {
       image: "https://pbs.twimg.com/media/EiQSUj8UwAIPlrs?format=jpg",
       name: "산악회장",

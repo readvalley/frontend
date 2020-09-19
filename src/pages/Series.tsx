@@ -18,6 +18,7 @@ import Button from "../components/Button";
 import HeartCounter from "../components/HeartCounter";
 import WritingListItem from "../components/WritingListItem";
 import Comment from "../components/Comment";
+import { Link } from "react-router-dom";
 
 const getSeriesData = (id: string): IDisplaySeries => {
   return {
@@ -72,6 +73,7 @@ const getSeriesData = (id: string): IDisplaySeries => {
         _id: "D2D2D3",
       },
     ],
+    currentReading: 3,
   };
 };
 
@@ -96,74 +98,35 @@ const Series: React.FC<{ id: string }> = ({ id }) => {
       >
         {seriesData.title}
       </ContentTitle>
-      <Horizontal
+      <Detail
         css={css`
           margin-top: 10px;
         `}
       >
-        <Detail>{seriesData.creator.name}</Detail>
-        <Horizontal
-          css={css`
-            justify-content: flex-end;
-            flex: 1;
-          `}
-        >
-          <div
-            css={css`
-              width: 16px;
-              height: 19px;
-              margin-right: 10px;
-            `}
-          >
-            <Share
-              css={[
-                IconButtonCss,
-                css`
-                  margin-top: 6px;
-                `,
-              ]}
-            />
-          </div>
-          <div
-            css={css`
-              width: 24px;
-              height: 24px;
-            `}
-          >
-            <MoreVertical
-              css={[
-                IconButtonCss,
-                css`
-                  margin: 6px auto 0px;
-                  --ggs: 0.8;
-                `,
-              ]}
-            />
-          </div>
-        </Horizontal>
-      </Horizontal>
+        {seriesData.creator.name}
+      </Detail>
       <Horizontal
         css={css`
-          margin-top: 10px;
+          margin: 10px 0px;
           justify-content: space-between;
         `}
       >
         <LighterDetail>{seriesData.category}</LighterDetail>
         <HeartCounter hearted={seriesData.hearted} hearts={seriesData.hearts} />
       </Horizontal>
-      <Horizontal
-        css={css`
-          margin-top: 10px;
-        `}
-      >
-        <Button
-          color={{
-            background: "#F0EEFF",
-            text: "#9B8CFF",
-          }}
-        >
-          이어서 보기
-        </Button>
+      {seriesData.currentReading && (
+        <Link to={`/reader/${seriesData._id}/${seriesData.currentReading}`}>
+          <Button
+            color={{
+              background: "#F0EEFF",
+              text: "#9B8CFF",
+            }}
+          >
+            이어서 보기
+          </Button>
+        </Link>
+      )}
+      <Link to={`/reader/${seriesData._id}/${seriesData.currentReading}`}>
         <Button
           css={css`
             margin-left: 10px;
@@ -173,9 +136,9 @@ const Series: React.FC<{ id: string }> = ({ id }) => {
             text: "#8CBAFF",
           }}
         >
-          이어서 보기
+          처음부터 보기
         </Button>
-      </Horizontal>
+      </Link>
       {seriesData.intro && (
         <>
           <SubgroupTitle>소개</SubgroupTitle>
