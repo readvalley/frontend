@@ -85,9 +85,10 @@ const BottomBar = withRouter(({ history }) => {
 const Wrapper = styled.div`
   /* padding: 20px 0px; */
   box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.07);
-  position: fixed;
-  bottom: 0px;
-  left: 0px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   width: 100%;
   box-sizing: border-box;
   background-color: white;

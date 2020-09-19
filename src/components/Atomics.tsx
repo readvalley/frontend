@@ -44,6 +44,12 @@ export const HorizontalScroller = styled.div`
 
 export const PageWrapper = styled.div`
   padding: 40px 20px 108px 20px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const LighterDetail = styled(Detail)`
