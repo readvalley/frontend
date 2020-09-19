@@ -1,5 +1,6 @@
 import { css } from "@emotion/core";
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   GroupTitle,
   Image,
@@ -14,6 +15,7 @@ interface ISeriesCardProps {
   title: string;
   imageUri: string;
   authorName: string;
+  _id: string;
 }
 
 const FixedWidthImage: React.FC<{ src: string }> = ({ src }) => (
@@ -30,18 +32,24 @@ const SeriesCard: React.FC<ISeriesCardProps> = ({
   title,
   imageUri,
   authorName,
+  _id,
 }) => (
-  <section
+  <Link
+    to={`/series/${_id}`}
     css={css`
       & + & {
         margin-left: 10px;
       }
+      text-decoration: none;
+      color: inherit;
     `}
   >
-    <FixedWidthImage src={imageUri} />
-    <ContentTitle>{title}</ContentTitle>
-    <Detail>{authorName}</Detail>
-  </section>
+    <section>
+      <FixedWidthImage src={imageUri} />
+      <ContentTitle>{title}</ContentTitle>
+      <Detail>{authorName}</Detail>
+    </section>
+  </Link>
 );
 
 interface IWritingCard {
@@ -68,16 +76,19 @@ const Home = () => {
             title="0% 의 가능성"
             imageUri="https://rycont.imfast.io/Share/%EC%A7%80%EC%88%98/1588748506721.jpg"
             authorName="COCO N"
+            _id="1032"
           />
           <SeriesCard
             title="1% 의 가능성"
             imageUri="https://rycont.imfast.io/Share/%EC%A7%80%EC%88%98/1588748517398.jpg"
             authorName="COCO N"
+            _id="1033"
           />
           <SeriesCard
             title="100% 의 가능성"
             imageUri="https://rycont.imfast.io/Share/%EC%A7%80%EC%88%98/1588748506369.jpg"
             authorName="COCO N"
+            _id="1034"
           />
         </HorizontalScroller>
         <GroupTitle>0%의 가능성</GroupTitle>

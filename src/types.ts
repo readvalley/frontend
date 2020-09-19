@@ -5,6 +5,9 @@ export interface IDisplaySeries {
   creator: Partial<IDisplayCreator>;
   title: string;
   image: string;
+  intro?: string;
+  writings?: Partial<IDisplayWriting>[];
+  comments?: Partial<IDisplayComment>[];
   _id: string;
 }
 
@@ -22,6 +25,7 @@ export interface IDisplayWriting {
   hearts: number;
   hearted: boolean;
   series: Partial<IDisplaySeries>;
+  price?: number;
   _id: string;
 }
 

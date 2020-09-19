@@ -12,7 +12,7 @@ const HeartCss = css`
 
 interface IHeartCounterProps {
   hearts: number;
-  hearted: boolean;
+  hearted?: boolean;
 }
 
 const HeartCounter: React.FC<IHeartCounterProps> = ({ hearted, hearts }) => {

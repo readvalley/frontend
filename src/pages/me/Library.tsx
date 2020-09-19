@@ -112,15 +112,7 @@ const Library = () => {
       </div>
       <SubgroupTitle>좋아요 한 회차</SubgroupTitle>
       {HEARTED_WRITING.map((d) => (
-        <WritingListItem
-          {...d}
-          key={d._id}
-          css={css`
-            & + & {
-              margin-top: 10px;
-            }
-          `}
-        />
+        <WritingListItem {...d} key={d._id} />
       ))}
       <SubgroupTitle>남긴 댓글</SubgroupTitle>
       {COMMENTS.map((d) => (

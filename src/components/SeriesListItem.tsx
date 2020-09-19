@@ -17,6 +17,7 @@ const SeriesListItem: React.FC<IDisplaySeries> = ({
   hearts,
   hearted,
   image: imageUri,
+  _id,
   ...props
 }) => {
   return (

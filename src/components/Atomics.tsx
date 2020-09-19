@@ -97,3 +97,10 @@ export const Input = styled.input`
   padding: 10px 15px;
   box-sizing: border-box;
 `;
+
+export const SmallBold = styled.p`
+  margin: 0px 0px 5px 0px;
+  font-size: 15px;
+  font-weight: 700;
+  opacity: 0.7;
+`;
