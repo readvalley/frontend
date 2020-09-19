@@ -11,7 +11,7 @@ import {
 } from "./Atomics";
 import HeartCounter from "./HeartCounter";
 
-const SeriesListItem: React.FC<IDisplaySeries> = ({
+const SeriesListItem: React.FC<Partial<IDisplaySeries>> = ({
   title,
   category,
   creator,
@@ -45,9 +45,9 @@ const SeriesListItem: React.FC<IDisplaySeries> = ({
             `}
           >
             <ContentTitle>{title}</ContentTitle>
-            <Detail>{creator.name}</Detail>
+            {creator?.name && <Detail>{creator.name}</Detail>}
             <LighterDetail>{category}</LighterDetail>
-            <HeartCounter hearts={hearts} hearted={hearted} />
+            {hearts && <HeartCounter hearts={hearts} hearted={hearted} />}
           </div>
         </Horizontal>
       </Link>

@@ -30,6 +30,8 @@ const Wrapper = styled.div`
   padding: 10px 15px;
   display: inline-block;
   border-radius: 6px;
+  box-sizing: border-box;
+  text-align: center;
 `;
 
 export default Button;

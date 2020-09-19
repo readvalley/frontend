@@ -3,7 +3,7 @@ import React from "react";
 import { IDisplayCreator } from "../types";
 import { Horizontal, CircleImage, ContentTitle, Detail } from "./Atomics";
 
-const CreatorListItem: React.FC<IDisplayCreator> = ({
+const CreatorListItem: React.FC<Partial<IDisplayCreator>> = ({
   name,
   image: imageUri,
   category,
@@ -12,18 +12,26 @@ const CreatorListItem: React.FC<IDisplayCreator> = ({
 }) => {
   return (
     <Horizontal {...props}>
-      <CircleImage src={imageUri} width={80} height={80} />
+      {imageUri && (
+        <CircleImage
+          src={imageUri}
+          width={80}
+          height={80}
+          css={css`
+            margin-right: 10px;
+          `}
+        />
+      )}
       <div
         css={css`
-          margin-left: 10px;
           & * + * {
             margin-top: 5px;
           }
         `}
       >
         <ContentTitle>{name}</ContentTitle>
-        <Detail>주제: {category}</Detail>
-        <Detail>팔로워: {follower}</Detail>
+        {category && <Detail>주제: {category}</Detail>}
+        {follower && <Detail>팔로워: {follower}</Detail>}
       </div>
     </Horizontal>
   );

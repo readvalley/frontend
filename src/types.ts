@@ -8,6 +8,7 @@ export interface IDisplaySeries {
   intro?: string;
   writings?: Partial<IDisplayWriting>[];
   comments?: Partial<IDisplayComment>[];
+  currentReading?: number;
   _id: string;
 }
 
@@ -16,6 +17,10 @@ export interface IDisplayCreator {
   name: string;
   category: string;
   follower: number;
+  isFollowing: boolean;
+  intro: string;
+  serieses: Partial<IDisplaySeries>[];
+  comments: Partial<IDisplayComment>[];
   _id: string;
 }
 
@@ -41,7 +46,7 @@ export interface IDisplayComment {
   target: {
     type: "creator" | "series";
     id: string;
-    name: string;
+    name?: string;
   };
   _id: string;
 }
