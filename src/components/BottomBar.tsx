@@ -22,7 +22,7 @@ const PAGES = [
   {
     icon: BookIcon,
     name: "내 서재",
-    route: "/",
+    route: "/bookshelf",
   },
   {
     icon: Search,
@@ -54,7 +54,6 @@ const Searchbar = () => {
 };
 
 const BottomBar = withRouter(({ history }) => {
-  console.log(history.location.pathname);
   return (
     <Wrapper>
       {history.location.pathname.includes("/discover") && <Searchbar />}
@@ -67,11 +66,11 @@ const BottomBar = withRouter(({ history }) => {
                 text-decoration: none;
               `}
             >
-              <Button active={history.location.pathname === page.route}>
+              <Button active={history.location.pathname.includes(page.route)}>
                 <Icon>
                   <page.icon />
                 </Icon>
-                {history.location.pathname === page.route && (
+                {history.location.pathname.includes(page.route) && (
                   <Name>{page.name}</Name>
                 )}
               </Button>

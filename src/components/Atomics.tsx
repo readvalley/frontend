@@ -1,3 +1,4 @@
+import { css } from "@emotion/core";
 import styled from "@emotion/styled";
 import { BORDER_COLOR } from "../constants";
 
@@ -68,4 +69,18 @@ export const Chip = styled.div`
   & + & {
     margin-left: 5px;
   }
+`;
+
+export const SubgroupTitle = styled.h2`
+  font-size: 24px;
+  color: #4d4d4d;
+  margin-top: 10px;
+  * + & {
+    margin-top: 30px;
+  }
+  margin-bottom: 20px;
+`;
+
+export const IconButtonCss = css`
+  color: #bc8888;
 `;

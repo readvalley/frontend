@@ -9,43 +9,15 @@ import {
   Divider,
   GroupTitle,
   Horizontal,
-  HorizontalScroller,
   Image,
   LighterDetail,
   PageWrapper,
 } from "../components/Atomics";
 import HeartCounter from "../components/HeartCounter";
 import BottomBar from "../components/BottomBar";
-
-const SeriesListItem: React.FC<IDisplaySeries> = ({
-  title,
-  category,
-  creator,
-  hearts,
-  hearted,
-  image: imageUri,
-}) => {
-  return (
-    <>
-      <Horizontal>
-        <Image src={imageUri} height={80} />
-        <div
-          css={css`
-            margin-left: 10px;
-            & * + * {
-              margin-top: 5px;
-            }
-          `}
-        >
-          <ContentTitle>{title}</ContentTitle>
-          <Detail>{creator.name}</Detail>
-          <LighterDetail>{category}</LighterDetail>
-          <HeartCounter hearts={hearts} hearted={hearted} />
-        </div>
-      </Horizontal>
-    </>
-  );
-};
+import { IDisplayCreator, IDisplaySeries } from "../types";
+import SeriesListItem from "../components/SeriesListItem";
+import CreatorListItem from "../components/CreatorListItem";
 
 const ListWithIndex: React.FC<{
   data: any[];
@@ -77,49 +49,6 @@ const Rank = styled.div`
   color: #4d4d4d;
   font-weight: 700;
 `;
-
-interface IDisplayCreator {
-  image: string;
-  name: string;
-  category: string;
-  follower: number;
-  _id: string;
-}
-
-interface IDisplaySeries {
-  category: string;
-  hearts: number;
-  hearted: boolean;
-  creator: Partial<IDisplayCreator>;
-  title: string;
-  image: string;
-  _id: string;
-}
-
-const CreatorListItem: React.FC<IDisplayCreator> = ({
-  name,
-  image: imageUri,
-  category,
-  follower,
-}) => {
-  return (
-    <Horizontal>
-      <CircleImage src={imageUri} width={80} height={80} />
-      <div
-        css={css`
-          margin-left: 10px;
-          & * + * {
-            margin-top: 5px;
-          }
-        `}
-      >
-        <ContentTitle>{name}</ContentTitle>
-        <Detail>주제: {category}</Detail>
-        <Detail>팔로워: {follower}</Detail>
-      </div>
-    </Horizontal>
-  );
-};
 
 const Discover = () => {
   const WEEKLY_SERIES: IDisplaySeries[] = [

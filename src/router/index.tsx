@@ -2,15 +2,16 @@ import React from "react";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import Discover from "../pages/Discover";
 import Home from "../pages/Home";
+import Me from "../pages/me";
 
-const Router: React.FC = (props) => {
-  console.log(props);
+const Router: React.FC = () => {
   return (
     <BrowserRouter>
       <Switch>
         <Route path="/discover" component={Discover} />
-        <Route path="/" exact component={Home} />
-        <Redirect path="*" to="/" />
+        <Route path="/me" component={Me} />
+        <Route path="/bookshelf" component={Home} />
+        <Redirect path="*" to="/bookshelf" />
       </Switch>
     </BrowserRouter>
   );
