@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "NanumBarunGothic";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./medium.eot");
+  src: url("./mediumie.eot") format("embedded-opentype"),
+    url("./medium.woff") format("woff"), url("./medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "NanumBarunGothic";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./bold.eot");
+  src: url("./boldie.eot") format("embedded-opentype"),
+    url("./bold.woff") format("woff"), url("./bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "NanumBarunGothic";
+  font-style: normal;
+  font-weight: 300;
+  src: url("./light.eot");
+  src: url("./lightie.eot") format("embedded-opentype"),
+    url("./light.woff") format("woff"), url("./light.ttf") format("truetype");
+}
