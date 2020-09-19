@@ -96,52 +96,13 @@ const Series: React.FC<{ id: string }> = ({ id }) => {
       >
         {seriesData.title}
       </ContentTitle>
-      <Horizontal
+      <Detail
         css={css`
           margin-top: 10px;
         `}
       >
-        <Detail>{seriesData.creator.name}</Detail>
-        <Horizontal
-          css={css`
-            justify-content: flex-end;
-            flex: 1;
-          `}
-        >
-          <div
-            css={css`
-              width: 16px;
-              height: 19px;
-              margin-right: 10px;
-            `}
-          >
-            <Share
-              css={[
-                IconButtonCss,
-                css`
-                  margin-top: 6px;
-                `,
-              ]}
-            />
-          </div>
-          <div
-            css={css`
-              width: 24px;
-              height: 24px;
-            `}
-          >
-            <MoreVertical
-              css={[
-                IconButtonCss,
-                css`
-                  margin: 6px auto 0px;
-                  --ggs: 0.8;
-                `,
-              ]}
-            />
-          </div>
-        </Horizontal>
-      </Horizontal>
+        {seriesData.creator.name}
+      </Detail>
       <Horizontal
         css={css`
           margin-top: 10px;
@@ -173,7 +134,7 @@ const Series: React.FC<{ id: string }> = ({ id }) => {
             text: "#8CBAFF",
           }}
         >
-          이어서 보기
+          처음부터 보기
         </Button>
       </Horizontal>
       {seriesData.intro && (
