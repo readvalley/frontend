@@ -111,3 +111,22 @@ export const SmallBold = styled.p`
   font-weight: 700;
   opacity: 0.7;
 `;
+
+export const Dropdown = styled.select`
+  outline: none;
+  border: 1px solid #e4e4e4;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  border-radius: 6px;
+`;
+
+export const Textarea = styled.textarea`
+  outline: none;
+  border: 1px solid #e4e4e4;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  border-radius: 6px;
+  resize: vertical;
+  height: 200px;
+  font-family: "NanumBarunGothic", sans-serif;
+`;

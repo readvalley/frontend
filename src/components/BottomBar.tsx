@@ -5,15 +5,26 @@ import {
   Ereader as BookIcon,
   Search as _Search,
   Boy as Me,
+  Pen as _Pen,
 } from "css.gg/icons/all";
 import { Link, withRouter } from "react-router-dom";
-import { ACTIVE_BACKGROUND, ACTIVE_RED } from "../constants";
+import { ACTIVE_RED } from "../constants";
+import getUserInfo from "../utils/user";
 
 const Search: React.FC = (props) => (
   <_Search
     {...props}
     css={css`
       margin-top: 0px !important;
+    `}
+  />
+);
+
+const Pen: React.FC = (props) => (
+  <_Pen
+    {...props}
+    css={css`
+      margin-top: 4px !important;
     `}
   />
 );
@@ -29,6 +40,15 @@ const PAGES = [
     name: "탐색",
     route: "/discover",
   },
+  ...(getUserInfo("isCreator")
+    ? [
+        {
+          icon: Pen,
+          name: "출판",
+          route: "/publish",
+        },
+      ]
+    : []),
   {
     icon: Me,
     name: "정보",
@@ -85,13 +105,18 @@ const BottomBar = withRouter(({ history }) => {
 const Wrapper = styled.div`
   /* padding: 20px 0px; */
   box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.07);
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  left: auto;
+  right: auto;
+  width: 540px;
   box-sizing: border-box;
   background-color: white;
+
+  @media screen and (max-width: 640px) {
+    width: 100%;
+    margin: 0px;
+  }
 `;
 
 const NavWrapper = styled.div`
@@ -136,6 +161,7 @@ const Name = styled.div`
 const SearchbarWrapper = styled.div`
   border-bottom: 1px solid #e4e4e4;
   display: flex;
+}
   /* padding-right: 15px; */
 `;
 

@@ -1,6 +1,20 @@
 @import url("./fonts/NanumBarunGothic/index.css");
 
 body {
-  font-family: "NanumBarunGothic", sans-serif;
+  background-color: rgba(0, 0, 0, 0.03);
   margin: 0px;
+}
+
+#root {
+  background-color: white;
+  font-family: "NanumBarunGothic", sans-serif;
+  width: 540px;
+  margin: 0px auto;
+}
+
+@media screen and (max-width: 640px) {
+  #root {
+    width: 100%;
+    margin: 0px;
+  }
 }

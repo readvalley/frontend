@@ -1,7 +1,6 @@
 import { css } from "@emotion/core";
 import React from "react";
 import {
-  BrowserRouter,
   Link,
   Redirect,
   Route,

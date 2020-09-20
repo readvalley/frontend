@@ -65,7 +65,7 @@ const Creator: React.FC<{ id: string }> = ({ id }) => {
   const [creatorData, setCreatorData] = useState<IDisplayCreator>();
   useEffect(() => {
     setCreatorData(() => getCreatorData(id));
-  }, []);
+  }, [id]);
   if (!creatorData) return <></>;
   return (
     <PageWrapper>
@@ -92,7 +92,7 @@ const Creator: React.FC<{ id: string }> = ({ id }) => {
           <LighterDetail>주제 : {creatorData.category}</LighterDetail>
           <LighterDetail>팔로워 : {creatorData.follower}</LighterDetail>
           <Button
-            color={{
+            colors={{
               background: "#F0EEFF",
               text: "#9B8CFF",
             }}

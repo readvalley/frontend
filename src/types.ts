@@ -1,3 +1,8 @@
+export enum Status {
+  "PUBLIC",
+  "HIDED",
+}
+
 export interface IDisplaySeries {
   category: string;
   hearts: number;
@@ -9,6 +14,7 @@ export interface IDisplaySeries {
   writings?: Partial<IDisplayWriting>[];
   comments?: Partial<IDisplayComment>[];
   currentReading?: number;
+  purchases?: number;
   _id: string;
 }
 
@@ -30,7 +36,9 @@ export interface IDisplayWriting {
   hearts: number;
   hearted: boolean;
   series: Partial<IDisplaySeries>;
-  price?: number;
+  price: number;
+  purchases: number;
+  status: Status;
   _id: string;
 }
 

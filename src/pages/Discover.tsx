@@ -3,17 +3,11 @@ import styled from "@emotion/styled";
 import React from "react";
 import {
   Chip,
-  CircleImage,
-  ContentTitle,
-  Detail,
   Divider,
   GroupTitle,
   Horizontal,
-  Image,
-  LighterDetail,
   PageWrapper,
 } from "../components/Atomics";
-import HeartCounter from "../components/HeartCounter";
 import BottomBar from "../components/BottomBar";
 import { IDisplayCreator, IDisplaySeries } from "../types";
 import SeriesListItem from "../components/SeriesListItem";
@@ -109,7 +103,7 @@ const Discover = () => {
         />
         <Divider />
         <GroupTitle>인기 검색 키워드</GroupTitle>
-        <Chip>코로나19</Chip>
+        <Chip>당신이 옳았습니다</Chip>
         <Chip>여왕님이 사라진 다음날</Chip>
       </PageWrapper>
       {BottomBar}
