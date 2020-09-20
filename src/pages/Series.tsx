@@ -1,12 +1,10 @@
 import { css } from "@emotion/core";
 import React, { useEffect, useState } from "react";
-import { Share, MoreVertical } from "css.gg/icons/all";
 
 import {
   ContentTitle,
   Detail,
   Horizontal,
-  IconButtonCss,
   Image,
   Input,
   LighterDetail,
@@ -117,7 +115,7 @@ const Series: React.FC<{ id: string }> = ({ id }) => {
       {seriesData.currentReading && (
         <Link to={`/reader/${seriesData._id}/${seriesData.currentReading}`}>
           <Button
-            color={{
+            colors={{
               background: "#F0EEFF",
               text: "#9B8CFF",
             }}
@@ -131,7 +129,7 @@ const Series: React.FC<{ id: string }> = ({ id }) => {
           css={css`
             margin-left: 10px;
           `}
-          color={{
+          colors={{
             background: "#EEF5FF",
             text: "#8CBAFF",
           }}

@@ -3,11 +3,11 @@ import styled from "@emotion/styled";
 import React from "react";
 import { ACTIVE_BACKGROUND, ACTIVE_RED } from "../constants";
 
-const Button: React.FC<{ color?: { background: string; text: string } }> = ({
-  children,
-  color,
-  ...props
-}) => {
+interface IProps extends React.HTMLAttributes<HTMLDivElement> {
+  colors?: { background: string; text: string };
+}
+
+const Button: React.FC<IProps> = ({ children, colors: color, ...props }) => {
   return (
     <Wrapper
       {...props}

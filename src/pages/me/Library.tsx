@@ -37,7 +37,7 @@ const Library = () => {
       _id: "2472",
     },
   ];
-  const HEARTED_WRITING: IDisplayWriting[] = [
+  const HEARTED_WRITING: Partial<IDisplayWriting>[] = [
     {
       image: "https://cdn4.buysellads.net/uu/1/41334/1550855401-cc_light.png",
       title: "어도비크리에이티브클라우드",

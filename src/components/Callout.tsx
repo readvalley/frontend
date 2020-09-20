@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import React, { useCallback, useState } from "react";
+import React, { useState } from "react";
 import { Close } from "css.gg/icons/all";
 import { css } from "@emotion/core";
 

@@ -3,17 +3,11 @@ import styled from "@emotion/styled";
 import React from "react";
 import {
   Chip,
-  CircleImage,
-  ContentTitle,
-  Detail,
   Divider,
   GroupTitle,
   Horizontal,
-  Image,
-  LighterDetail,
   PageWrapper,
 } from "../components/Atomics";
-import HeartCounter from "../components/HeartCounter";
 import BottomBar from "../components/BottomBar";
 import { IDisplayCreator, IDisplaySeries } from "../types";
 import SeriesListItem from "../components/SeriesListItem";

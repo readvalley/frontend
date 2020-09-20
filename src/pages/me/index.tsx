@@ -1,7 +1,6 @@
 import { css } from "@emotion/core";
 import React from "react";
 import {
-  BrowserRouter,
   Link,
   Redirect,
   Route,
@@ -54,7 +53,7 @@ const Me: React.FC<RouteComponentProps> = ({ history, match }) => {
             >
               <GroupTitle
                 css={css`
-                  opacity: ${(history.location.pathname == "/me" && i === 0) ||
+                  opacity: ${(history.location.pathname === "/me" && i === 0) ||
                   history.location.pathname.includes(e.route)
                     ? 1
                     : 0.3};

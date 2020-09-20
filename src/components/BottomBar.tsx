@@ -3,17 +3,28 @@ import styled from "@emotion/styled";
 import React from "react";
 import {
   Ereader as BookIcon,
-  Search as _Search,
+  Search as Search_,
   Boy as Me,
+  Pen as Pen_,
 } from "css.gg/icons/all";
 import { Link, withRouter } from "react-router-dom";
-import { ACTIVE_BACKGROUND, ACTIVE_RED } from "../constants";
+import { ACTIVE_RED } from "../constants";
+import getUserInfo from "../utils/user";
 
 const Search: React.FC = (props) => (
-  <_Search
+  <Search_
     {...props}
     css={css`
       margin-top: 0px !important;
+    `}
+  />
+);
+
+const Pen: React.FC = (props) => (
+  <Pen_
+    {...props}
+    css={css`
+      margin-top: 4px !important;
     `}
   />
 );
@@ -29,6 +40,15 @@ const PAGES = [
     name: "탐색",
     route: "/discover",
   },
+  ...(getUserInfo("isCreator")
+    ? [
+        {
+          icon: Pen,
+          name: "출판",
+          route: "/publish",
+        },
+      ]
+    : []),
   {
     icon: Me,
     name: "정보",

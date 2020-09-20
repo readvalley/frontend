@@ -11,7 +11,9 @@ import {
 } from "./Atomics";
 import HeartCounter from "./HeartCounter";
 
-const SeriesListItem: React.FC<Partial<IDisplaySeries>> = ({
+const SeriesListItem: React.FC<
+  Partial<IDisplaySeries> & { disableLink?: boolean }
+> = ({
   title,
   category,
   creator,
@@ -19,8 +21,30 @@ const SeriesListItem: React.FC<Partial<IDisplaySeries>> = ({
   hearted,
   image: imageUri,
   _id,
+  disableLink,
+  purchases,
   ...props
 }) => {
+  const Content = (
+    <Horizontal {...props}>
+      <Image src={imageUri} height={80} />
+      <div
+        css={css`
+          margin-left: 10px;
+          & * + * {
+            margin-top: 5px;
+          }
+        `}
+      >
+        <ContentTitle>{title}</ContentTitle>
+        {purchases && <Detail>{purchases}부 판매</Detail>}
+        {creator?.name && <Detail>{creator.name}</Detail>}
+        <LighterDetail>{category}</LighterDetail>
+        {hearts && <HeartCounter hearts={hearts} hearted={hearted} />}
+      </div>
+    </Horizontal>
+  );
+  if (disableLink) return Content;
   return (
     <>
       <Link
@@ -34,22 +58,7 @@ const SeriesListItem: React.FC<Partial<IDisplaySeries>> = ({
           display: inline-block;
         `}
       >
-        <Horizontal {...props}>
-          <Image src={imageUri} height={80} />
-          <div
-            css={css`
-              margin-left: 10px;
-              & * + * {
-                margin-top: 5px;
-              }
-            `}
-          >
-            <ContentTitle>{title}</ContentTitle>
-            {creator?.name && <Detail>{creator.name}</Detail>}
-            <LighterDetail>{category}</LighterDetail>
-            {hearts && <HeartCounter hearts={hearts} hearted={hearted} />}
-          </div>
-        </Horizontal>
+        {Content}
       </Link>
     </>
   );
