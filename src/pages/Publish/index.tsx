@@ -1,6 +1,5 @@
 import React from "react";
 import { Redirect, Route, RouteComponentProps, Switch } from "react-router-dom";
-import BottomBar from "../../components/BottomBar";
 import NewWriting from "./NewWriting";
 import Series from "./Series";
 import SeriesInfo from "./SeriesInfo";

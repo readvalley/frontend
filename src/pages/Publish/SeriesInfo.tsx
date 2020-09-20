@@ -1,17 +1,12 @@
 import { css } from "@emotion/core";
 import React, { useEffect, useState } from "react";
-import { Link, match, RouteComponentProps, withRouter } from "react-router-dom";
+import { Link, RouteComponentProps, withRouter } from "react-router-dom";
 import {
   ContentTitle,
-  Detail,
   GroupTitle,
   LighterDetail,
   PageWrapper,
   Image,
-  Horizontal,
-  Input,
-  Dropdown,
-  Textarea,
 } from "../../components/Atomics";
 import BottomBar from "../../components/BottomBar";
 import Button from "../../components/Button";
@@ -29,7 +24,7 @@ const AddNew = withRouter(({ match, history }) => {
       if (fileInput.files)
         setPhoto(window.URL.createObjectURL(fileInput.files[0]));
     });
-  }, []);
+  }, [fileInput]);
   return (
     <div>
       <ContentTitle>새 회차 등록</ContentTitle>

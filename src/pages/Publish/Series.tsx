@@ -47,7 +47,7 @@ const AddNew = withRouter(({ match, history }) => {
       if (fileInput.files)
         setPhoto(window.URL.createObjectURL(fileInput.files[0]));
     });
-  }, []);
+  }, [fileInput]);
   return (
     <div>
       <ContentTitle>새 작품 등록</ContentTitle>

@@ -1,24 +1,13 @@
 import styled from "@emotion/styled";
-import React, { useEffect, useRef, useState } from "react";
-import {
-  DisplayFullwidth,
-  DistributeVertical,
-  FormatBold,
-  FormatHeading,
-  FormatItalic,
-  Image,
-} from "css.gg/icons/all";
-import {
-  ContentTitle,
-  Horizontal,
-  IconButtonCss,
-} from "../../components/Atomics";
+import React, { useRef } from "react";
+import { DisplayFullwidth, FormatBold, FormatItalic } from "css.gg/icons/all";
+import { ContentTitle, Horizontal } from "../../components/Atomics";
 import { css } from "@emotion/core";
 import Button from "../../components/Button";
 import { close, open } from "../../components/Modal";
-import { match, RouteComponentProps } from "react-router-dom";
+import { RouteComponentProps } from "react-router-dom";
 
-const NewWriting: React.FC<RouteComponentProps> = ({ match, history }) => {
+const NewWriting: React.FC<RouteComponentProps> = ({ history }) => {
   const editorRef = useRef<HTMLDivElement>(null);
   const append = (text: string) => {
     if (editorRef?.current?.innerHTML) editorRef.current.innerHTML += text;

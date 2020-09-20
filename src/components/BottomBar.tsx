@@ -3,16 +3,16 @@ import styled from "@emotion/styled";
 import React from "react";
 import {
   Ereader as BookIcon,
-  Search as Search_,
+  Search as _Search,
   Boy as Me,
-  Pen as Pen_,
+  Pen as _Pen,
 } from "css.gg/icons/all";
 import { Link, withRouter } from "react-router-dom";
 import { ACTIVE_RED } from "../constants";
 import getUserInfo from "../utils/user";
 
 const Search: React.FC = (props) => (
-  <Search_
+  <_Search
     {...props}
     css={css`
       margin-top: 0px !important;
@@ -21,7 +21,7 @@ const Search: React.FC = (props) => (
 );
 
 const Pen: React.FC = (props) => (
-  <Pen_
+  <_Pen
     {...props}
     css={css`
       margin-top: 4px !important;

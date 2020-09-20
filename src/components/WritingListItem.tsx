@@ -1,7 +1,6 @@
 import { css } from "@emotion/core";
 import React from "react";
 import { Link } from "react-router-dom";
-import { isNumber } from "util";
 import { IDisplayWriting, Status } from "../types";
 import { ContentTitle, Detail, Horizontal, Image } from "./Atomics";
 import HeartCounter from "./HeartCounter";
