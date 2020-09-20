@@ -6,6 +6,7 @@
     "@emotion/babel-preset-css-prop": "^10.0.27",
     "@emotion/core": "^10.0.35",
     "@emotion/styled": "^10.0.27",
+    "axios": "^0.20.0",
     "css.gg": "^2.0.0",
     "customize-cra": "^1.0.0",
     "emotion": "^10.0.27",
