@@ -5,10 +5,10 @@ import Router from "./router";
 
 const App: React.FC = () => (
   <MobileSizedView
-  backgroundColor="#E1EAF4"
-  screenBackgroundColor="#FFF"
-  screenLightShadow="-31px -31px 62px #FFF"
-  screenDarkShadow="31px 31px 62px #D5DEEB"
+    backgroundColor="#e9ecef"
+    screenBackgroundColor="#FFF"
+    screenLightShadow="-4px -4px 32px #f1f3f5"
+    screenDarkShadow="4px 4px 32px #dee2e6"
   >
     <Router />
   </MobileSizedView>

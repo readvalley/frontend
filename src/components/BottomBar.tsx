@@ -103,13 +103,11 @@ const BottomBar = withRouter(({ history }) => {
 });
 
 const Wrapper = styled.div`
-  /* padding: 20px 0px; */
   box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.07);
-  position: fixed;
-  bottom: 0px;
-  left: auto;
-  right: auto;
-  width: 540px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   box-sizing: border-box;
   background-color: white;
 
@@ -135,13 +133,14 @@ const Button = styled.div<{ active: boolean }>`
   justify-content: center;
   vertical-align: middle;
   box-shadow: none;
+
   ${({ active }) =>
-    active &&
-    css`
+    active && css`
       background-color: #ffcccc;
       padding: 15px 20px;
       border-radius: 48px;
       box-shadow: 0px 3px 30px #ffcfcf;
+
       & * {
         color: ${ACTIVE_RED};
       }
@@ -161,8 +160,6 @@ const Name = styled.div`
 const SearchbarWrapper = styled.div`
   border-bottom: 1px solid #e4e4e4;
   display: flex;
-}
-  /* padding-right: 15px; */
 `;
 
 const SearchInput = styled.input`
