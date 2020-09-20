@@ -3,7 +3,11 @@ import React, { useState } from "react";
 import { Close } from "css.gg/icons/all";
 import { css } from "@emotion/core";
 
-const Callout: React.FC<{ calloudId: string }> = ({ children, calloudId }) => {
+const Callout: React.FC<{ calloudId?: string }> = ({
+  children,
+  calloudId,
+  ...props
+}) => {
   const [closed, setClosed] = useState(
     localStorage.getItem(`CALLOUT/${calloudId}`) === "CLOSED"
   );
@@ -13,16 +17,18 @@ const Callout: React.FC<{ calloudId: string }> = ({ children, calloudId }) => {
   };
   if (closed) return <></>;
   return (
-    <Wrapper>
+    <Wrapper {...props}>
       {children}
-      <Close
-        css={css`
-          margin-left: auto;
-          opacity: 0.4;
-          vertical-align: middle;
-        `}
-        onClick={closeCallout}
-      />
+      {calloudId && (
+        <Close
+          css={css`
+            margin-left: auto;
+            opacity: 0.4;
+            vertical-align: middle;
+          `}
+          onClick={closeCallout}
+        />
+      )}
     </Wrapper>
   );
 };

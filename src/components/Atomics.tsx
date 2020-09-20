@@ -120,6 +120,7 @@ export const Textarea = styled.textarea`
   padding: 10px 15px;
   box-sizing: border-box;
   border-radius: 6px;
-  resize: none;
+  resize: vertical;
   height: 200px;
+  font-family: "NanumBarunGothic", sans-serif;
 `;
