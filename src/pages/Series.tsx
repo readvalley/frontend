@@ -31,7 +31,7 @@ const getSeriesData = async (id: string) => {
     hearts: 2,
     hearted: false,
     creator: {
-      name: '여준호',
+      name: '박정한',
       _id: "2097",
     },
     category: "경제 · 자기계발",
@@ -82,6 +82,7 @@ const getSeriesData = async (id: string) => {
 
 const Series: React.FC<{ id: string }> = ({ id }) => {
   const [seriesData, setSeriesData] = useState<any>();
+  const [isAfterPay, setIsAfterPay] = useState<boolean>(false);
 
   useEffect(() => {
     const getData = async () => {
@@ -188,47 +189,61 @@ const Series: React.FC<{ id: string }> = ({ id }) => {
           </Detail>
         </>
       )}
-      <SubgroupTitle>내용</SubgroupTitle>
-      <div>
-        <video style={{ width: '100%', display: 'none' }}></video>
-        {[...Array(seriesData.pages)].map((v, index) => (
-          <img
-            style={{ width: '100%' }}
-            src={`http://localhost:5000/streams/${seriesData._id}-${index}.png`}
-            key={index}
-          />
-        ))}
-      </div>
-      <SubgroupTitle
-        css={css`
-          margin-bottom: 10px;
-        `}
-      >
-        댓글
-      </SubgroupTitle>
-      <Horizontal
-        css={css`
-          margin-bottom: 20px;
-        `}
-      >
-        <Input
-          css={css`
-            flex: 1;
-            border-right-width: 0;
-          `}
-        />
+      {!isAfterPay ? (
         <Button
+          style={{ marginTop: 25 }}
+          onClick={() => setTimeout(() => {
+            window.alert('<일론 머스크>를 구매했습니다.');
+            setIsAfterPay(true);
+          }, 2000)}
+        >
+          48 RCT로 구매하기
+        </Button>
+      ) : (
+        <>
+        <SubgroupTitle>내용</SubgroupTitle>
+        <div>
+          <video style={{ width: '100%', display: 'none' }}></video>
+          {[...Array(seriesData.pages)].map((v, index) => (
+            <img
+              style={{ width: '100%' }}
+              src={`http://localhost:5000/streams/${seriesData._id}-${index}.png`}
+              key={index}
+            />
+          ))}
+        </div>
+        <SubgroupTitle
           css={css`
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
+            margin-bottom: 10px;
           `}
         >
-          등록
-        </Button>
-      </Horizontal>
-      {seriesData.comments?.map((d: any) => (
-        <Comment {...d} />
-      ))}
+          댓글
+        </SubgroupTitle>
+        <Horizontal
+          css={css`
+            margin-bottom: 20px;
+          `}
+        >
+          <Input
+            css={css`
+              flex: 1;
+              border-right-width: 0;
+            `}
+          />
+          <Button
+            css={css`
+              border-top-left-radius: 0;
+              border-bottom-left-radius: 0;
+            `}
+          >
+            등록
+          </Button>
+        </Horizontal>
+        {seriesData.comments?.map((d: any) => (
+          <Comment {...d} />
+        ))}
+        </>
+      )}
     </PageWrapper>
   );
 };

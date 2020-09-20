@@ -65,10 +65,10 @@ const Library = () => {
       target: {
         id: "384",
         type: "series",
-        name: "한국형프로그래밍언어",
+        name: "블록체인, 그리고 미래",
       },
       date: new Date(),
-      content: "구름OS에 필적할만합니다",
+      content: "당연히 디파이가 최고지요",
       _id: "3843",
     },
   ];

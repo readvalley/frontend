@@ -8,3 +8,8 @@ body {
 #root {
   font-family: "NanumBarunGothic", sans-serif;
 }
+
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+}

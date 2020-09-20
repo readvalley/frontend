@@ -7,7 +7,7 @@ const InputWithName: React.FC<
   React.HTMLAttributes<HTMLInputElement> & {
     name: string;
     className?: string;
-  }
+  } & any
 > = ({ name, className, ...props }) => {
   return (
     <Horizontal

@@ -25,9 +25,9 @@ const Wallet = () => {
         지갑 잔액
       </SubgroupTitle>
       <Balance>
-        540 <UnitBalance>RPT</UnitBalance>
+        102.00 <UnitBalance>RPT</UnitBalance>
       </Balance>
-      <Wonhwa>386,640원</Wonhwa>
+      <Wonhwa>73,236원</Wonhwa>
       {isCharging && (
         <>
           <Callout
@@ -86,8 +86,12 @@ const Wallet = () => {
         </thead>
         <tbody>
           <tr>
-            <Data>7월 8일</Data>
-            <Data>-3413 RPT</Data>
+            <Data>9월 20일</Data>
+            <Data>-48.00 RPT</Data>
+          </tr>
+          <tr>
+            <Data>9월 20일</Data>
+            <Data>+150.00 RPT</Data>
           </tr>
         </tbody>
       </table>
