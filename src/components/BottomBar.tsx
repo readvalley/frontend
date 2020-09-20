@@ -107,8 +107,13 @@ const Wrapper = styled.div`
   box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.07);
   position: fixed;
   bottom: 0px;
-  left: 0px;
-  width: 100%;
+  left: auto;
+  right: auto;
+  width: 540px;
+  @media screen and (max-width: 640px) {
+    width: 100%;
+    margin: 0px;
+  }
   box-sizing: border-box;
   background-color: white;
 `;
@@ -155,6 +160,7 @@ const Name = styled.div`
 const SearchbarWrapper = styled.div`
   border-bottom: 1px solid #e4e4e4;
   display: flex;
+}
   /* padding-right: 15px; */
 `;
 
