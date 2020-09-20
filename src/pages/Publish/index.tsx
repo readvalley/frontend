@@ -11,7 +11,7 @@ const Publish: React.FC<RouteComponentProps> = ({ match }) => {
       <Switch>
         <Route
           exact
-          path={`${match.path}/series/:id/newwriting`}
+          path={`${match.path}/series/:id/new`}
           component={NewWriting}
         />
         <Route

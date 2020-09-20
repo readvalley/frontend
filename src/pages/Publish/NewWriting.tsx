@@ -93,10 +93,15 @@ const Editor = styled.div`
 const WritingConfig = styled.div`
   position: fixed;
   bottom: 0px;
-  width: 100%;
+  width: 540px;
+  @media screen and (max-width: 640px) {
+    width: 100%;
+    margin: 0px;
+  }
   box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.07);
   padding: 20px 30px;
   box-sizing: border-box;
+  background-color: white;
 `;
 
 const IconWrapper = styled.div<{ active?: boolean }>`
