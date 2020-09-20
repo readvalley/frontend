@@ -40,7 +40,7 @@ const getMySerieses = (id: string): Partial<IDisplaySeries>[] => [
 
 const AddNew = withRouter(({ match, history }) => {
   const fileInput = document.createElement("input");
-  const [photo, setPhoto] = useState<string>();
+  const [photo, setPhoto] = useState<string>('https://images.unsplash.com/photo-1551946650-60a22105bcb0?auto=format&fit=crop&w=1600&q=80');
   useEffect(() => {
     fileInput.type = "file";
     fileInput.addEventListener("change", () => {
