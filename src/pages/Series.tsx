@@ -20,10 +20,12 @@ import Comment from "../components/Comment";
 import { Link } from "react-router-dom";
 
 const getSeriesData = async (id: string) => {
-  const { data: { book } } = await axios.get('http://localhost:5000/book/5f66ebb327e6032ba0d83557');
+  const { data: { book, streams } } = await axios.get('http://localhost:5000/book/5f66ebb327e6032ba0d83557');
   console.log(book)
 
   return {
+    ...book,
+    streams,
     title: book.title,
     image: book.thumbnailURL,
     hearts: 2,
@@ -34,7 +36,6 @@ const getSeriesData = async (id: string) => {
     },
     category: "경제 · 자기계발",
     intro: book.description,
-    _id: "28237",
     writings: [
       {
         hearted: false,
@@ -80,7 +81,8 @@ const getSeriesData = async (id: string) => {
 };
 
 const Series: React.FC<{ id: string }> = ({ id }) => {
-  const [seriesData, setSeriesData] = useState<IDisplaySeries>();
+  const [seriesData, setSeriesData] = useState<any>();
+
   useEffect(() => {
     const getData = async () => {
       const data = await getSeriesData(id);
@@ -90,6 +92,33 @@ const Series: React.FC<{ id: string }> = ({ id }) => {
 
     getData();
   }, [id]);
+
+  const initDash = () => {
+    if (!seriesData) return;
+    console.log('initDash')
+    const protData = {
+      "org.w3.clearkey": {
+          "clearkeys": {
+              "jfSChn1inQMBWhOaZtKoAA": "jfSChn1inQMBWhOaZtKoAA"
+          }
+      }
+    };
+    console.log(seriesData)
+    var video,
+        player,
+        url = `http://localhost:5000${seriesData.streams[0]}`;
+
+    video = document.querySelector("video");
+    // @ts-ignore
+    player = dashjs.MediaPlayer().create();
+    player.initialize(video, url, true);
+    player.setProtectionData(protData);
+  }
+
+  useEffect(() => {
+    initDash();
+  }, [seriesData]);
+
   if (!seriesData) return <></>;
   return (
     <PageWrapper>
@@ -160,7 +189,16 @@ const Series: React.FC<{ id: string }> = ({ id }) => {
         </>
       )}
       <SubgroupTitle>내용</SubgroupTitle>
-      <div></div>
+      <div>
+        <video style={{ width: '100%', display: 'none' }}></video>
+        {[...Array(seriesData.pages)].map((v, index) => (
+          <img
+            style={{ width: '100%' }}
+            src={`http://localhost:5000/streams/${seriesData._id}-${index}.png`}
+            key={index}
+          />
+        ))}
+      </div>
       <SubgroupTitle
         css={css`
           margin-bottom: 10px;
@@ -188,7 +226,7 @@ const Series: React.FC<{ id: string }> = ({ id }) => {
           등록
         </Button>
       </Horizontal>
-      {seriesData.comments?.map((d) => (
+      {seriesData.comments?.map((d: any) => (
         <Comment {...d} />
       ))}
     </PageWrapper>
