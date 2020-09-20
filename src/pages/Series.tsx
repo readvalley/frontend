@@ -105,7 +105,7 @@ const Series: React.FC<{ id: string }> = ({ id }) => {
       </Detail>
       <Horizontal
         css={css`
-          margin: 10px 0px;
+          margin: 10px 0;
           justify-content: space-between;
         `}
       >
@@ -168,13 +168,13 @@ const Series: React.FC<{ id: string }> = ({ id }) => {
         <Input
           css={css`
             flex: 1;
-            border-right-width: 0px;
+            border-right-width: 0;
           `}
         />
         <Button
           css={css`
-            border-top-left-radius: 0px;
-            border-bottom-left-radius: 0px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
           `}
         >
           등록

@@ -9,13 +9,13 @@ import {
 } from "css.gg/icons/all";
 import { Link, withRouter } from "react-router-dom";
 import { ACTIVE_RED } from "../constants";
-import getUserInfo from "../utils/user";
+// import getUserInfo from "../utils/user";
 
 const Search: React.FC = (props) => (
   <SearchIcon
     {...props}
     css={css`
-      margin-top: 0px !important;
+      margin-top: 0 !important;
     `}
   />
 );
@@ -40,7 +40,8 @@ const PAGES = [
     name: "탐색",
     route: "/discover",
   },
-  ...(getUserInfo("isCreator")
+  // ...(getUserInfo("isCreator")
+  ...(true
     ? [
         {
           icon: Pen,
@@ -63,7 +64,7 @@ const Searchbar = () => {
       <div
         css={css`
           --ggs: 0.8;
-          padding: 12px 20px 0px 0px;
+          padding: 12px 20px 0 0;
           color: #959595;
         `}
       >
@@ -103,7 +104,7 @@ const BottomBar = withRouter(({ history }) => {
 });
 
 const Wrapper = styled.div`
-  box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.07);
   position: absolute;
   bottom: 0;
   left: 0;
@@ -113,13 +114,13 @@ const Wrapper = styled.div`
 
   @media screen and (max-width: 640px) {
     width: 100%;
-    margin: 0px;
+    margin: 0;
   }
 `;
 
 const NavWrapper = styled.div`
   max-width: 334px;
-  margin: 0px auto;
+  margin: 0 auto;
   display: flex;
   padding: 20px 40px;
   justify-content: space-between;
@@ -139,7 +140,7 @@ const Button = styled.div<{ active: boolean }>`
       background-color: #ffcccc;
       padding: 15px 20px;
       border-radius: 48px;
-      box-shadow: 0px 3px 30px #ffcfcf;
+      box-shadow: 0 3px 30px #ffcfcf;
 
       & * {
         color: ${ACTIVE_RED};

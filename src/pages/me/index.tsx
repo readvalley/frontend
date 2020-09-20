@@ -36,7 +36,7 @@ const Me: React.FC<RouteComponentProps> = ({ history, match }) => {
         <Horizontal
           css={css`
             & h1 {
-              margin-top: 0px;
+              margin-top: 0;
             }
             a + a {
               margin-left: 10px;

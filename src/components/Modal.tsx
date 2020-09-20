@@ -17,21 +17,22 @@ export const Modal = () => {
 };
 
 const BGWrapper = styled.div`
-  position: fixed;
-  top: 0px;
+  position: absolute;
+  top: 0;
   width: 540px;
-  @media screen and (max-width: 640px) {
-    width: 100%;
-    margin: 0px;
-  }
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.3);
+
+  @media screen and (max-width: 640px) {
+    width: 100%;
+    margin: 0;
+  }
 `;
 
 const Wrapper = styled.div`
   padding: 20px;
   position: absolute;
-  bottom: 0px;
+  bottom: 0;
   width: 100%;
   background-color: white;
   border-top-left-radius: 30px;

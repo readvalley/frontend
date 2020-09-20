@@ -4,7 +4,7 @@ import { BORDER_COLOR } from "../constants";
 
 export const GroupTitle = styled.h1`
   font-size: 27px;
-  margin: 0px;
+  margin: 0;
   margin-bottom: 20px;
   * + & {
     margin-top: 30px;
@@ -13,17 +13,19 @@ export const GroupTitle = styled.h1`
 
 export const ContentTitle = styled.h3`
   font-size: 18px;
-  margin: 0px;
+  margin: 0;
 `;
 
 export const Detail = styled.p`
   font-size: 18px;
-  margin: 5px 0px 0px 0px;
+  margin: 5px 0 0 0;
 `;
 
 export const Image = styled.img`
   border: 2px solid ${BORDER_COLOR};
   border-radius: 6px;
+  max-height: 300px;
+  object-fit: cover;
 `;
 
 export const Horizontal = styled.div`
@@ -106,7 +108,7 @@ export const Input = styled.input`
 `;
 
 export const SmallBold = styled.p`
-  margin: 0px 0px 5px 0px;
+  margin: 0 0 5px 0;
   font-size: 15px;
   font-weight: 700;
   opacity: 0.7;

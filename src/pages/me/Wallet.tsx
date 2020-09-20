@@ -102,7 +102,7 @@ const Balance = styled.h1`
   font-family: HangeulNuri;
   margin-top: 20px;
   color: #ff5c5c;
-  margin-bottom: 0px;
+  margin-bottom: 0;
   font-size: 48px;
 `;
 
@@ -115,7 +115,7 @@ const Wonhwa = styled.p`
   color: #ff8c8c;
   margin-top: 3px;
   font-size: 18px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 `;
 
 const WalletAddress = styled.p`
@@ -123,9 +123,9 @@ const WalletAddress = styled.p`
   font-size: 18px;
   opacity: 0.6;
   font-weight: 700;
-  margin-top: 0px;
+  margin-top: 0;
   flex: 1;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 `;
 
 const TableHead = styled.td`

@@ -92,13 +92,13 @@ const Editor = styled.div`
 
 const WritingConfig = styled.div`
   position: fixed;
-  bottom: 0px;
+  bottom: 0;
   width: 540px;
   @media screen and (max-width: 640px) {
     width: 100%;
-    margin: 0px;
+    margin: 0;
   }
-  box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.07);
   padding: 20px 30px;
   box-sizing: border-box;
   background-color: white;

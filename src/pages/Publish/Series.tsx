@@ -64,6 +64,7 @@ const AddNew = withRouter(({ match, history }) => {
           css={css`
             height: 180px;
             border: 1px solid #e4e4e4;
+            border-radius: 6px;
             margin-top: 10px;
             padding-top: 66px;
             box-sizing: border-box;
@@ -77,6 +78,7 @@ const AddNew = withRouter(({ match, history }) => {
       )}
       <InputWithName
         name="제목"
+        placeholder="제목을 입력해주세요."
         css={css`
           margin-top: 10px;
         `}
@@ -111,6 +113,7 @@ const AddNew = withRouter(({ match, history }) => {
         작품 설명
       </LighterDetail>
       <Textarea
+        placeholder="설명을 입력해주세요."
         css={css`
           margin-top: 10px;
           width: 100%;
